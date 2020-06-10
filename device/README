@@ -1,0 +1,40 @@
+Developmet
+==========
+To flash and monitor logs of a USB connected device use the following command 
+(make sure you stopped monitoring logs before running this command)
+
+export DEVICE="sprinkler-right"; platformio run --target upload --target monitor -e dev
+
+
+To flash over the air (OTA) use the following command based on the device
+DEVICE should be one of sprinkler-right, sprinkler-left, sprinkler-terrace
+
+export DEVICE="sprinkler-right"; platformio run --target upload --upload-port $DEVICE.local -e ota
+
+
+
+Monitor Logs
+============
+Make sure the device is connected via USB, and then use the following method
+
+platformio run --target monitor -e dev
+
+
+
+Upload web pages
+================
+First compile the web app by running the following command
+
+cd ../web
+npm run build
+
+
+Then, make sure the web app is working fine
+
+npm run start:build
+
+
+Finally when everything looks good run the following command to copy the web
+pages to the device
+
+export DEVICE="sprinkler-right"; ./upload_web.sh
