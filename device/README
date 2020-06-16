@@ -26,6 +26,7 @@ Upload web pages
 First compile the web app by running the following command
 
 cd ../web
+npm install
 npm run build
 
 
