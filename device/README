@@ -27,6 +27,7 @@ First compile the web app by running the following command
 
 cd ../web
 npm install
+chmod +x cleanup.sh
 npm run build
 
 
